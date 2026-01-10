@@ -1,0 +1,213 @@
+﻿:root {
+  --primary: #2563eb;
+  --bg: #0b132b;
+  --card: #1c2541;
+  --text: #e0e6f8;
+  --muted: #9aa7c7;
+  --accent: #2a9d8f;
+  --danger: #ef4444;
+  --gradient: linear-gradient(135deg, #2563eb, #2a9d8f);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #0b132b, #1f2937);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--primary);
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(12, 20, 35, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 1.2rem;
+
+  background: linear-gradient(135deg, #2563eb, #2a9d8f, #ef4444);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn, .btn-primary, .btn-outline {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.6);
+}
+.btn-outline {
+  border: 1px solid var(--muted);
+  color: var(--text);
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+.btn-outline.danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+.card.shadow {
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Forms */
+label {
+  display: block;
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #111827;
+  color: var(--text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(42,157,143,0.5);
+  outline: none;
+}
+textarea { min-height: 140px; }
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Search */
+.search-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+/* Dropdown */
+.dropdown { position: relative; display: inline-block; }
+.dropdown .btn {
+  border: 1px solid var(--muted);
+  background: transparent;
+  color: var(--text);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #0f172a;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  padding: 10px;
+  right: 0;
+  animation: fadeIn 0.3s ease;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  .description-box{
+    border: 1px solid rgba(37,99,235,0.4);
+    background-color:rgba(37,99,235,0.4);
+
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-top: 6px;
+
+    white-space: pre-wrap;
+  }
